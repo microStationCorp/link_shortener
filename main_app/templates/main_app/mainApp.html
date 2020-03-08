@@ -25,6 +25,9 @@
         color: rgb(117, 11, 11);
         font-weight: bold;
     }
+    .invalid_slug{
+        border: 1px solid red;
+    }
 </style>
 {% endblock mainPagecss %}
 
@@ -35,26 +38,28 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">URL</span>
             </div>
-            <input name="URL" type="text" class="form-control" placeholder="https://example.com/users/" aria-label="Username"
-                aria-describedby="basic-addon1">
+            <input name="URL" type="text" class="form-control" placeholder="https://example.com/users/"
+                aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="text-center myText">
             Link shortner settings :
         </div>
         <div class="row">
-            <div class="col-lg-9 col-md-8 col-sm-10 text-center"><input name="SLUG" id="slug" type="text" aria-label="Last name"
-                    class="form-control" placeholder="enter custom slug"></div>
+            <div class="col-lg-9 col-md-8 col-sm-10 text-center">
+                <input name="SLUG" id="slug" type="text" aria-label="Last name" class="form-control"
+                    placeholder="enter custom slug"></div>
             <div id="short" class="col-lg-3 col-md-4 col-sm-8 text-center">
                 <button class="btn btn-secondary" type="button" id="button-addon2"
-                    style="width: 150px;">Shorten</button>
+                    style="width: 150px;" disabled>Shorten</button>
             </div>
         </div>
+        <span style="color: red;font-weight: bold;" id="error_msg" hidden>* invalid slug Taken</span>
     </div>
     <div id="res"></div>
 </div>
 {% endblock content %}
 
 {% block mainAppJs %}
-<script src="{% static 'js/onkeypress.js' %}"></script>
+<script src="{% static 'js/slugValidation.js' %}"></script>
 <script src="{% static 'js/shorten.js' %}"></script>
 {% endblock mainAppJs %}

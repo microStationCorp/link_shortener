@@ -16,7 +16,7 @@ $(document).ready(function () {
                 console.log(data)
                 myHtml = `<div class="card mt-5">
                 <div class="card-body">
-                    <div class="card-text">Your URL : <a href="http://127.0.0.1:8000/${data.name}" class="url">http://127.0.0.1:8000/${data.name}</a>
+                    <div class="card-text">Your URL : <a href="http://127.0.0.1:8000/go/${data.name}" class="url">http://127.0.0.1:8000/go/${data.name}</a>
                     </div>
                     <div class="card-text">Your URL Stat Page : <a href="http://127.0.0.1:8000/stat/${data.name}"
                             class="url">http://127.0.0.1:8000/stat/${data.name}</a></div>
